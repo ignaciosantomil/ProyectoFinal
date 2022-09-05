@@ -6,9 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Landing Page - Start Bootstrap Theme</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="{% static 'assets/favicon.ico' %}"}/>
+        <title>{% block title %}Inicio{% endblock %}</title>
+        <link rel="icon" type="image/x-icon" href="{% static 'assets/favicon.ico' %}"/>
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" type="text/css" />
         <!-- Google fonts-->
@@ -20,10 +19,11 @@
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
-                <a class="navbar-brand" href="#!">Inicio</a>
+                <a class="navbar-brand" href="index.html">Inicio</a>
                 <a class="navbar-brand" href="#!">Productos</a>
+                <a class="btn btn-primary" href="AppProyecto/registro.html">Registrarse</a>
                 <a class="btn btn-primary" href="#signup">Iniciar sesion</a>
-                <a class="btn btn-primary" href="#signup">Registrarse</a>
+
             </div>
         </nav>
         <!-- Masthead-->
@@ -75,6 +75,9 @@
             </div>
         </header>
         <!-- Icons Grid-->
+        {% block registro %}
+
+        {% endblock %}
         <section class="features-icons bg-light text-center">
             <div class="container">
                 <div class="row">
