@@ -3,6 +3,6 @@ from AppProyecto.views import *
 
 urlpatterns = [
     path('', inicio),
-    path('registro/', cliente, name=cliente)
+    path('registro/', cliente, name='clientes')
 
 ]
