@@ -16,15 +16,15 @@
         <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
     </head>
     <body>
+
         <!-- Navigation-->
         {% include 'Base/navigation.html' %}
 
         <!-- Header -->
        {% include 'Base/header.html' %}
-        <!-- Icons Grid-->
-        {% block registro %}
 
-        {% endblock %}
+
+        <!-- Icons Grid-->
         <section class="features-icons bg-light text-center">
             <div class="container">
                 <div class="row">
@@ -53,6 +53,7 @@
             </div>
         </section>
         <!-- Image Showcases-->
+        {% block inicio %}{% endblock %}
         <section class="showcase">
             <div class="container-fluid p-0">
                 <div class="row g-0">
@@ -153,6 +154,7 @@
             </div>
         </section>
         <!-- Footer-->
+
         {% include 'Base/footer.html' %}
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
