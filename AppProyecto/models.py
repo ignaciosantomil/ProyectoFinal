@@ -11,6 +11,10 @@ class Cliente(models.Model):
     nombre = models.CharField(max_length=30)
     nacimiento = models.DateField()
     mail = models.EmailField()
+    dni = models.IntegerField(unique=True)
+
+    def __str__(self):
+        return f"Cliente: {self.nombre}"
 
 
 class servicio_cliente(models.Model):
