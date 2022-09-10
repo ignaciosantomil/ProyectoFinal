@@ -11,3 +11,9 @@ class Cliente(models.Model):
     nombre = models.CharField(max_length=30)
     nacimiento = models.DateField()
     mail = models.EmailField()
+
+
+class servicio_cliente(models.Model):
+    nombre = models.CharField(max_length=30)
+    mail = models.EmailField()
+    consulta = models.CharField(max_length=140)
