@@ -3,7 +3,7 @@ from .models import *
 from django.contrib import messages
 import datetime
 from django.core.exceptions import MultipleObjectsReturned
-from AppProyecto.forms import ClienteForm, ClienteBuscar
+from AppProyecto.forms import *
 
 
 def inicio(request):
@@ -37,6 +37,23 @@ def cliente_form(request):
 
     return render(request, 'AppProyecto/cliente_form.html', contexto)
 
+def pelicula_form(request):
+    if request.method == 'POST':
+        mi_formulario = ClienteForm(request.POST)
+
+        if mi_formulario.is_valid():
+            data = mi_formulario.cleaned_data
+
+            pelicula1 = Pelicula(nombre=data.get('nombre'), director=data.get('director'), anio=data.get('anio'), genero=data.get('genero'), descripcion=data.get('descripcion'))
+            pelicula1.save()
+
+            return redirect('AppProyectoInicio')
+
+    contexto = {
+        'form': PeliculaForm
+    }
+
+    return render(request, 'AppProyecto/pelicula_form.html', contexto)
 
 def cliente_buscar(request):
     contexto = {
@@ -57,8 +74,8 @@ def cliente_buscar_post(request):
     return render(request, 'AppProyecto/cliente_filtrado.html', contexto)
 
 
-def cliente_eliminar(request, dni):
-    eliminar_cliente = Cliente.objects.get(dni=dni)
+def cliente_eliminar(request, nombre):
+    eliminar_cliente = Cliente.objects.get(nombre=nombre)
     eliminar_cliente.delete()
 
     messages.info(request, f'El cliente de dni: {eliminar_cliente} fue eliminado satisfactoriamente')
@@ -66,8 +83,8 @@ def cliente_eliminar(request, dni):
     return redirect('AppProyectoInicio')
 
 
-def cliente_editar(request, dni):
-    editar = Cliente.objects.get(dni=dni)
+def cliente_editar(request, nombre):
+    editar = Cliente.objects.get(nombre=nombre)
 
     if request.method == 'POST':
         mi_formulario = ClienteForm(request.POST)

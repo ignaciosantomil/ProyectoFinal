@@ -9,4 +9,5 @@ urlpatterns = [
     path('cliente_buscar_post/', cliente_buscar_post, name= 'AppProyectoClienteBuscarPost'),
     path('cliente_eliminar/<int:dni>', cliente_eliminar, name='AppProyectoClienteEliminar'),
     path('editar_cliente/<int:dni>', cliente_editar, name='AppProyectoClienteEditar'),
+    path('pelicula_form/', pelicula_form, name='AppProyectoPeliculaForm'),
 ]

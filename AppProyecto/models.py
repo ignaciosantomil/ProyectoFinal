@@ -2,9 +2,12 @@ from django.db import models
 from django.shortcuts import render
 
 
-class Producto(models.Model):
-    modelo = models.CharField(max_length=30)
-    precio = models.FloatField()
+class Pelicula(models.Model):
+    pelicula = models.CharField(max_length=40)
+    director = models.CharField(max_length=30)
+    anio = models.IntegerField
+    genero = models.CharField(max_length=20)
+    descripcion = models.CharField(max_length=140)
 
 
 class Cliente(models.Model):

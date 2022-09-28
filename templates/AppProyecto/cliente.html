@@ -8,8 +8,8 @@
 {% block inicio %}
     {% for cliente in clientes %}
         El nombre del cliente es {{ cliente.nombre }}
-        <a href="{% url 'AppProyectoClienteEliminar' cliente.dni %}">-X-</a>
-        <a href="{% url 'AppProyectoClienteEditar' cliente.dni %}">Editar</a>
+        <a href="{% url 'AppProyectoClienteEliminar' cliente.nombre %}">-X-</a>
+        <a href="{% url 'AppProyectoClienteEditar' cliente.nombre %}">Editar</a>
         <br>
     {% endfor %}
     

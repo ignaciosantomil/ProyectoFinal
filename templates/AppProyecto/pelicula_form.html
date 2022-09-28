@@ -1,0 +1,21 @@
+{% extends 'index.html' %}
+
+{% block title %}
+     Formulario Pelicula
+
+{% endblock %}
+
+{% block inicio %}
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Enviar">
+
+    </form>
+{% endblock %}
+
+
+
+{% block registro %}
+
+{% endblock %}

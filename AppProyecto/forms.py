@@ -8,5 +8,13 @@ class ClienteForm(forms.Form):
     dni = forms.IntegerField()
 
 
+class PeliculaForm(forms.Form):
+    pelicula = forms.CharField(max_length=40)
+    director = forms.CharField(max_length=30)
+    anio = forms.IntegerField
+    genero = forms.CharField(max_length=20)
+    descripcion = forms.CharField(max_length=140)
+
+
 class ClienteBuscar(forms.Form):
-    dni = forms.IntegerField()
+    nombre = forms.CharField(max_length=30)
