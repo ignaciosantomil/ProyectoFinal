@@ -12,6 +12,7 @@ class Pelicula(models.Model):
 
 class Usuario(models.Model):
     nombre = models.CharField(max_length=30)
+    apellido = models.CharField(max_length=30)
     nacimiento = models.DateField()
     email = models.EmailField()
 
