@@ -1,10 +1,17 @@
 <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
-                <a class="navbar-brand" href="index.html">Inicio</a>
-                <a class="navbar-brand" href="pelicula_form.html">Peliculas</a>
-                <a class="btn btn-primary" href="">Registrarse</a>
-                <a class="btn btn-primary" href="#signup">Iniciar sesion</a>
+                <a class="navbar-brand" href="{% url 'AppProyectoInicio' %}">Inicio</a>
+                <a class="navbar-brand" href="{% url 'AppProyectoPeliculas' %}">Peliculas</a>
+
+                {% if  user.is_authenticated %}
+                    <h5> Bienvenido {{ user.get_username }}</h5>
+                    <a class="btn btn-primary" href="{% url 'UserProyectoLogout' %}">Cerrar Sesion</a>
+                {% else %}
+                    <a class="btn btn-primary" href="{% url 'UserProyectoRegister' %}">Registrarse</a>
+                    <a class="btn btn-primary" href="{% url 'UserProyectoLogin' %}">Iniciar sesion</a>
+                {% endif %}
+
+
 
             </div>
         </nav>
-        <!-- Masthea

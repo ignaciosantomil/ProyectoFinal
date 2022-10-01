@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+
+{% block title %}
+     Pelicula filtrado
+
+{% endblock %}
+
+{% block inicio %}
+   {% for pelicula in peliculas %}
+       {{pelicula.nombre}}
+       <br>
+       {{pelicula.director}}
+       <br>
+       {{pelicula.anio}}
+       <br>
+       {{pelicula.genero}}
+       <br>
+       {{pelicula.descripcion}}
+       <br>
+
+    {% endfor %}
+{% endblock %}
+
+
+
+{% block registro %}
+
+{% endblock %}

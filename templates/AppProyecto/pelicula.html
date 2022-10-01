@@ -1,21 +1,20 @@
 {% extends 'index.html' %}
 
 {% block title %}
-     Formulario Cliente
+    Peliculas
 
 {% endblock %}
 
 {% block inicio %}
+    <br>
     <form action="" method="POST">
-        {% csrf_token %}
+    {% csrf_token %}
         {{ form.as_p }}
         <input type="submit" value="Enviar">
 
     </form>
-{% endblock %}
+    <br>
+    <br>
 
-
-
-{% block registro %}
-
+    
 {% endblock %}

@@ -1,20 +1,18 @@
 {% extends 'index.html' %}
 
 {% block title %}
-     Busqueda Cliente
+     {{ nombre_form }}
 
 {% endblock %}
 
 {% block inicio %}
-    <form action="/AppProyecto/cliente_buscar_post" method="GET">
+    <form action="" method="POST">
         {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit" value="Buscar">
+        <input type="submit" value="{{ nombre_form }}">
 
     </form>
 {% endblock %}
-
-
 
 {% block registro %}
 

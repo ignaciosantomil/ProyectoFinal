@@ -1,0 +1,21 @@
+{% extends 'index.html' %}
+
+{% block title %}
+     Busqueda Pelicula
+
+{% endblock %}
+
+{% block inicio %}
+    <form action="/AppProyecto/pelicula_buscar_post" method="GET">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Buscar">
+
+    </form>
+{% endblock %}
+
+
+
+{% block registro %}
+
+{% endblock %}
