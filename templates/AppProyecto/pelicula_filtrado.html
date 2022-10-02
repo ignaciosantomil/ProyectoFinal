@@ -7,15 +7,14 @@
 
 {% block inicio %}
    {% for pelicula in peliculas %}
-       {{pelicula.nombre}}
+       <h5>Nombre: </h5> <p> {{pelicula.nombre}}</p>
        <br>
-       {{pelicula.director}}
+       <h5>Director: </h5><p>{{pelicula.director}} </p>
        <br>
-       {{pelicula.genero}}
+       <h5>Genero: </h5><p> {{pelicula.genero}}</p>
        <br>
-       {{pelicula.descripcion}}
+       <h5>Descripcion: </h5><p>{{pelicula.descripcion}} </p>
        <br>
-
     {% endfor %}
 {% endblock %}
 

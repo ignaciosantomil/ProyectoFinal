@@ -21,6 +21,7 @@ def pelicula(request):
 
 @login_required
 def pelicula_form(request):
+
     if request.method == 'POST':
         mi_formulario = PeliculaForm(request.POST)
 
@@ -53,7 +54,7 @@ def pelicula_buscar_post(request):
     peliculas = Pelicula.objects.filter(nombre__icontains=nombre)
 
     contexto = {
-        'peliculas': pelicula
+        'peliculas': peliculas
 
     }
     return render(request, 'AppProyecto/pelicula_filtrado.html', contexto)
