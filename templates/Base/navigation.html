@@ -1,7 +1,7 @@
 <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
                 <a class="navbar-brand" href="{% url 'AppProyectoInicio' %}">Inicio</a>
-                <a class="navbar-brand" href="{% url 'AppProyectoPeliculas' %}">Peliculas</a>
+                <a class="navbar-brand" href="{% url 'AppProyectoPeliculaForm' %}">Peliculas</a>
 
                 {% if  user.is_authenticated %}
                     <img height="40px" src= "{{ user.avatar.imagen.url }}" alt="">

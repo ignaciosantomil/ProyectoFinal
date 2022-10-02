@@ -16,6 +16,11 @@ class Usuario(models.Model):
 class Pelicula(models.Model):
     nombre = models.CharField(max_length=40)
     director = models.CharField(max_length=30)
-    anio = models.IntegerField
     genero = models.CharField(max_length=20)
     descripcion = models.CharField(max_length=140)
+
+    def __str__(self):
+        return f"Pelicula: {self.nombre}, " \
+               f"Director: {self.director}," \
+               f" Genero: {self.genero}, " \
+               f"Descripcion: {self.descripcion}"

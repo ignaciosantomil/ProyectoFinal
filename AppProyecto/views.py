@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from .models import *
 from django.contrib import messages
@@ -18,7 +19,7 @@ def pelicula(request):
 
     return render(request, 'AppProyecto/pelicula.html', contexto)
 
-
+@login_required
 def pelicula_form(request):
     if request.method == 'POST':
         mi_formulario = PeliculaForm(request.POST)
@@ -26,9 +27,10 @@ def pelicula_form(request):
         if mi_formulario.is_valid():
             data = mi_formulario.cleaned_data
 
-            pelicula1 = Pelicula(nombre=data.get('nombre'), director=data.get('director'), anio=data.get('año'), genero=data.get('genero'), descripcion=data.get('descripcion'))
+            pelicula1 = Pelicula(nombre=data.get('nombre'), director=data.get('director'),
+                                 genero=data.get('genero'), descripcion=data.get('descripcion'))
             pelicula1.save()
-
+            messages.info(request, 'Pelicula enviada con exito!')
             return redirect('AppProyectoInicio')
 
     contexto = {
@@ -37,13 +39,14 @@ def pelicula_form(request):
 
     return render(request, 'AppProyecto/pelicula.html', contexto)
 
+@login_required
 def pelicula_buscar(request):
     contexto = {
         'form': PeliculaBuscar(),
     }
     return render(request, 'AppProyecto/pelicula_buscar.html', contexto)
 
-
+@login_required
 def pelicula_buscar_post(request):
     nombre = request.GET.get('nombre')
 
@@ -55,6 +58,7 @@ def pelicula_buscar_post(request):
     }
     return render(request, 'AppProyecto/pelicula_filtrado.html', contexto)
 
+@login_required
 def pelicula_editar(request, nombre):
     editar = Pelicula.objects.get(nombre=nombre)
 
