@@ -6,15 +6,13 @@ from UserProyecto.models import Avatar
 
 
 class UserRegisterForm(UserCreationForm):
-    nombre = forms.CharField(max_length=30)
-    apellido = forms.CharField(max_length=30)
-    nacimiento = forms.DateField()
+    first_name = forms.CharField(max_length=30)
+    last_name = forms.CharField(max_length=30)
     email = forms.EmailField()
 
     class Meta:
         model = User
-        fields = ('username', 'nombre', 'apellido', 'nacimiento', 'email',)
-
+        fields = ('username', 'first_name', 'last_name', 'email',)
 
 
 class AvatarForm(forms.ModelForm):
@@ -22,5 +20,3 @@ class AvatarForm(forms.ModelForm):
         model = Avatar
 
         fields = '__all__'
-
-

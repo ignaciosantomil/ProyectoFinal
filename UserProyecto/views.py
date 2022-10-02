@@ -78,9 +78,8 @@ def editar_usuario(request):
             data = form.cleaned_data
 
             usuario.username = data.get('username')
-            usuario.nombre = data.get('nombre')
-            usuario.apellido = data.get('apellido')
-            usuario.nacimiento = data.get('nacimiento')
+            usuario.first_name = data.get('first_name')
+            usuario.last_name = data.get('last_name')
             usuario.email = data.get('email')
 
             usuario.save()
@@ -96,15 +95,15 @@ def editar_usuario(request):
         'form': UserRegisterForm(
             initial={
                 'username': usuario.username,
-                'nombre': usuario.nombre,
-                'apellido': usuario.apellido,
-                'nacimiento': usuario.nacimiento,
+                'first_name': usuario.first_name,
+                'last_name': usuario.last_name,
                 'email': usuario.email,
             }),
         'nombre_form': 'Registro'
     }
 
     return render(request, 'UserProyecto/login.html', contexto)
+
 
 def upload_avatar(request):
     if request.method == 'POST':
@@ -124,7 +123,6 @@ def upload_avatar(request):
                 avatar = Avatar(user=data.get('user'), imagen=data.get('imagen'))
                 avatar.save()
         return redirect('AppProyectoInicio')
-
 
     contexto = {
         'form': AvatarForm(),
