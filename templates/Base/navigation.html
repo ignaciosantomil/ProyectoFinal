@@ -1,8 +1,14 @@
 <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
                 <a class="navbar-brand" href="{% url 'AppProyectoInicio' %}">Inicio</a>
-                <a class="navbar-brand" href="{% url 'AppProyectoPeliculaForm' %}">Peliculas</a>
-
+                <ul class="navbar-brand dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Peliculas
+                    </a>
+                    <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="{% url 'AppProyectoPeliculaBuscar'%}"> Peliculas </a></li>
+                    <li><a class="dropdown-item" href="{% url  'AppProyectoPeliculaForm' %}"> Agregar pelicula </a></li>
+                    </ul>
+                </ul>
                 {% if  user.is_authenticated %}
                     <img height="40px" src= "{{ user.avatar.imagen.url }}" alt="">
                     <h5> Bienvenido {{ user.get_username }}</h5>

@@ -59,6 +59,9 @@ def pelicula_buscar_post(request):
     }
     return render(request, 'AppProyecto/pelicula_filtrado.html', contexto)
 
+
+
+"""
 @login_required
 def pelicula_editar(request, nombre):
     editar = Pelicula.objects.get(nombre=nombre)
@@ -71,7 +74,6 @@ def pelicula_editar(request, nombre):
 
             editar.nombre = data.get('nombre')
             editar.director = data.get('director')
-            editar.anio = data.get('anio')
             editar.genero = data.get('genero')
             editar.descripcion = data.get('descripcion')
 
@@ -84,11 +86,11 @@ def pelicula_editar(request, nombre):
             initial={
                 'nombre': editar.nombre,
                 'director': editar.director,
-                'anio': editar.anio,
                 'genero': editar.genero,
                 'descripcion': editar.descripcion,
 
             })
     }
 
-    return render(request, 'AppProyecto/pelicula_form.html', contexto)
+    return render(request, 'AppProyecto/pelicula.html', contexto)
+"""
