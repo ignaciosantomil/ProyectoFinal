@@ -16,4 +16,5 @@ Pruebas:
 
 La idea es continuar desarrollando el sitio dandole mas opciones y mejorar la calidad del diseño que por cuestiones de tiempo se dejo con la base del bootstrap.
 
+Enlace al video de funcionalidad:  https://youtu.be/7b6eZF8VDXQ
 
