@@ -1,11 +1,18 @@
 {% extends 'index.html' %}
 
 {% block title %}
-     Busqueda Pelicula
+    Peliculas
 
 {% endblock %}
 
 {% block inicio %}
+    {% for pelicula in peliculas %}
+        <h2> nombre: {{ pelicula.nombre }} </h2>
+
+    {% endfor %}
+
+
+
     <form action="/AppProyecto/pelicula_buscar_post" method="GET">
         {% csrf_token %}
         {{ form.as_p }}

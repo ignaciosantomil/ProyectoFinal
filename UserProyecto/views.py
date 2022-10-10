@@ -105,6 +105,7 @@ def editar_usuario(request):
     return render(request, 'UserProyecto/login.html', contexto)
 
 
+@login_required
 def upload_avatar(request):
     if request.method == 'POST':
         formulario = AvatarForm(request.POST, request.FILES)

@@ -12,12 +12,12 @@ def inicio(request):
 
 
 def pelicula(request):
-    peliculas = Pelicula.objects.all()[:3]
+    peliculas = Pelicula.objects.all()
     contexto = {
         'peliculas': peliculas
     }
 
-    return render(request, 'AppProyecto/pelicula.html', contexto)
+    return render(request, 'AppProyecto/pelicula_buscar.html', contexto)
 
 @login_required
 def pelicula_form(request):
@@ -58,6 +58,11 @@ def pelicula_buscar_post(request):
 
     }
     return render(request, 'AppProyecto/pelicula_filtrado.html', contexto)
+
+@login_required
+def about(request):
+    return render(request, 'AppProyecto/about.html')
+
 
 
 

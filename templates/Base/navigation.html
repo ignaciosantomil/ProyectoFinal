@@ -12,6 +12,7 @@
                 {% if  user.is_authenticated %}
                     <img height="40px" src= "{{ user.avatar.imagen.url }}" alt="">
                     <h5> Bienvenido {{ user.get_username }}</h5>
+                    <a class="btn btn-primary" href="{% url 'UserProyectoAvatar' %}">Avatar</a>
                     <a class="btn btn-primary" href="{% url 'UserProyectoLogout' %}">Cerrar Sesion</a>
                 {% else %}
                     <a class="btn btn-primary" href="{% url 'UserProyectoRegister' %}">Registrarse</a>

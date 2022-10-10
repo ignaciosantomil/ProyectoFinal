@@ -13,8 +13,10 @@ Pruebas:
 5. Con el boton "Cerrar sesion" se cierra sesion ingresada y se retorna al inicio.
 6. En el apartado de peliculas (siempre y cuando estemos con la sesion iniciada) se llega a un formulario para agregar peliculas nuevas.
 7. Con la url http://127.0.0.1:8000/AppProyecto/pelicula_buscar/ (siempre y cuando estemos con la sesion iniciada) vamos a acceder a un formulario que nos va a permitir buscar peliculas por su nombre. Una vez que introducimos el nombre le damos "buscar" y nos va a llevar a una pagina con los detalles encontrados.
+8. En el footer, clickeando la palabra "about", se accede a una pagina que devuelve informacion sobre mi.
 
 La idea es continuar desarrollando el sitio dandole mas opciones y mejorar la calidad del diseño que por cuestiones de tiempo se dejo con la base del bootstrap.
+
 
 Enlace al video de funcionalidad:  https://youtu.be/7b6eZF8VDXQ
 
