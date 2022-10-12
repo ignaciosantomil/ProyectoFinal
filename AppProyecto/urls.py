@@ -7,5 +7,5 @@ urlpatterns = [
     path('pelicula_buscar/', pelicula_buscar, name='AppProyectoPeliculaBuscar'),
     path('pelicula_buscar_post/', pelicula_buscar_post, name='AppProyectoPeliculaBuscarPost'),
     path('pelicula_form/', pelicula_form, name='AppProyectoPeliculaForm'),
-    path('about/',about, name='AppProyectoAbout'),
+    path('about/', about, name='AppProyectoAbout'),
 ]

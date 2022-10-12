@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+
+{% block title %}
+    Peliculas
+
+{% endblock %}
+
+{% block inicio %}
+   {% for pelicula in object_list %}
+        <h5> Nombre: {{ pelicula.nombre }} </h2>
+        <br>
+        <h5>Director: </h5><p>{{pelicula.director}} </p>
+        <br>
+        <h5>Genero: </h5><p> {{pelicula.genero}}</p>
+        <br>
+        <h5>Descripcion: </h5><p>{{pelicula.descripcion}} </p>
+        <br>
+        <br>
+    {% endfor %}
+
+    <br>
+{% endblock %}

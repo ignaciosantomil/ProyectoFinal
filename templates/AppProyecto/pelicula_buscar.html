@@ -5,14 +5,15 @@
 
 {% endblock %}
 
-{% block inicio %}
-    {% for pelicula in peliculas %}
-        <h2> nombre: {{ pelicula.nombre }} </h2>
 
+{% block inicio %}
+    {% for pelicula in object_list %}
+        <h2> Nombre: {{ pelicula.nombre }} </h2>
+        <br>
     {% endfor %}
 
-
-
+<br>
+<br>
     <form action="/AppProyecto/pelicula_buscar_post" method="GET">
         {% csrf_token %}
         {{ form.as_p }}

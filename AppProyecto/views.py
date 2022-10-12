@@ -14,10 +14,10 @@ def inicio(request):
 def pelicula(request):
     peliculas = Pelicula.objects.all()
     contexto = {
-        'peliculas': peliculas
+        'object_list': peliculas
     }
 
-    return render(request, 'AppProyecto/pelicula_buscar.html', contexto)
+    return render(request, 'AppProyecto/peliculas.html', contexto)
 
 @login_required
 def pelicula_form(request):
@@ -38,7 +38,7 @@ def pelicula_form(request):
         'form': PeliculaForm
     }
 
-    return render(request, 'AppProyecto/pelicula.html', contexto)
+    return render(request, 'AppProyecto/pelicula_form.html', contexto)
 
 @login_required
 def pelicula_buscar(request):
@@ -97,5 +97,5 @@ def pelicula_editar(request, nombre):
             })
     }
 
-    return render(request, 'AppProyecto/pelicula.html', contexto)
+    return render(request, 'AppProyecto/pelicula_form.html', contexto)
 """
